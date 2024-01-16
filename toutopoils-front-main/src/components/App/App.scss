@@ -1,0 +1,28 @@
+.app {
+	position: relative;
+	min-height: 100vh;
+}
+
+.app-main-container {
+	display: flex;
+	justify-content: center;
+}
+.main {
+	padding-bottom: 5rem;
+	width: 100%;
+	max-width: 1200px;
+}
+@media (max-width: 599px) {
+	.menu-desktop {
+		display: none;
+	}
+	.main {
+		padding-bottom: 12rem;
+	}
+}
+
+@media (min-width: 600px) {
+	.menu-mobile {
+		display: none;
+	}
+}

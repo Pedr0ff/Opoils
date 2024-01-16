@@ -1,0 +1,152 @@
+@use '../../styles/vars';
+
+.head-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.cards-container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin: 0;
+    margin-top: vars.$gutter * 3;
+    gap: 20px;
+    row-gap: 20px;
+    column-gap: 20px;
+
+    .card {
+        margin-top: vars.$gutter * 3;
+        transition: all .2s ease-in-out;
+
+        &:hover { 
+            transform: scale(1.1); 
+        }
+
+        &-img-top {
+            padding: vars.$gutter * 2;
+        }
+
+        &-dog {
+            margin: 0;
+            width: 300px !important;
+            box-shadow: vars.$shadow;
+            height: 300px;
+            object-fit: cover;
+        }
+
+        &-title {
+            color: vars.$font-color;
+        }
+
+        .age {
+            color: vars.$font-color;
+            font-size: 1.2rem;
+        }
+    }
+
+    .default-picture {
+        opacity: 0.3;
+    }
+
+}
+
+.red {
+    color: #ff0000;
+}
+
+.orange {
+    color: #ff4500;
+}
+
+.green {
+    color: #008000;
+}
+
+.gender {
+    width: 50px;
+    color: vars.$primary-color;
+}
+
+.reload-button-dog {
+    width: vars.$gutter *20 !important;
+    margin: 0;
+}
+
+.filter-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+
+}
+
+@media screen and (max-width: 992px){
+    .cards-container{
+        .card{
+            width:100%;
+        }
+    }
+    .dog-container{
+    display: flex !important;  
+        .card-img-top{
+            &.card-dog{
+                width:11rem !important;
+                height:11rem !important;
+                margin: 1rem;
+                padding:0;
+                border-radius: 1rem;
+            }    
+        }
+        .card-body{
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            .card-text{               
+                flex-grow:30;          
+            }
+            .last-walking{
+                flex-grow:1;
+            }
+        }   
+        
+    }
+}
+@media screen and (max-width: 590px){
+    .dog-container{
+            .card-img-top{
+                &.card-dog{
+                    width:8rem !important;
+                    height:8rem !important;
+                }    
+            }
+        }
+        .main-container{
+            margin:50px 20px 10px 20px !important;
+        }
+        .cards-container{
+            row-gap:0 !important;
+            gap:0 !important;
+        }
+}
+@media screen and (max-width: 400px){
+    .dog-container{
+        .card-img-top{
+            &.card-dog{
+                width:6rem !important;
+                height:6rem !important;
+            }    
+        }
+        .card-title{
+            font-size:1.1rem;
+        }
+        .age{
+            font-size:1rem !important;
+        }
+        .last-walking{
+            font-size:0.7rem !important;
+        }
+    }
+  
+}
